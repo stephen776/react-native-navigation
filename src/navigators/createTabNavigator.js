@@ -5,7 +5,7 @@ import {TabNavigator, StackNavigator} from 'react-navigation';
 export const createTabNavigator = (config, routes) => {
   const tabRoutes = _.reduce(config.routes, (result, route, key) => ({
     ...result,
-    [key]: {screen: StackNavigator(routes, {initialRouteName: route.screen})},
+    [key]: {screen: StackNavigator(route.stack, {initialRouteName: route.initialScreen})},
   }), {});
 
   return TabNavigator(tabRoutes, config.config);
