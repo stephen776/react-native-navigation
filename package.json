@@ -1,7 +1,7 @@
 {
-  "name": "truefit-react-native-navigation",
+  "name": "tf-react-native-navigation",
   "version": "0.0.23",
-  "description": "This repo wrap react-navigation to make navigation friendlier.",
+  "description": "Fork of the Truefit repo that wraps react-navigation to make navigation friendlier.",
   "main": "lib/index.js",
   "scripts": {
     "start": "nodemon src/index.js --exec babel-node",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TrueFit/react-native-navigation.git"
+    "url": "git+https://github.com/stephen776/react-native-navigation.git"
   },
-  "author": "Josh Gretz",
+  "author": "Steve Jacobs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TrueFit/react-native-navigation/issues"
+    "url": "https://github.com/stephen776/react-native-navigation/issues"
   },
-  "homepage": "https://github.com/TrueFit/react-native-navigation#readme",
+  "homepage": "https://github.com/stephen776/react-native-navigation#readme",
   "dependencies": {
     "autobind-decorator": "^2.1.0",
     "lodash": "4.17.5",
