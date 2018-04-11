@@ -2,10 +2,10 @@
 import _ from 'lodash';
 import {TabNavigator, StackNavigator} from 'react-navigation';
 
-export const createTabNavigator = (config, routes) => {
+export const createTabNavigator = config => {
   const tabRoutes = _.reduce(config.routes, (result, route, key) => ({
     ...result,
-    [key]: {screen: StackNavigator(route.stack, {initialRouteName: route.initialScreen})},
+    [key]: {screen: route.screen || StackNavigator(route.stack, {initialRouteName: route.initialRouteName})},
   }), {});
 
   return TabNavigator(tabRoutes, config.config);
