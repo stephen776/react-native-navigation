@@ -8,9 +8,6 @@ export default (state = null, action) => {
       const {initialRoute, type} = action.payload;
       const navigator = getNavigator(type);
 
-      //from open PR on TF Package github
-      let initialNavState = navigator.router.getStateForAction(NavigationActions.init());
-
       // the tab navigator decides to put a bunch of child actions on this that we don't want, so truncate those
       const actionForPath = navigator.router.getActionForPathAndParams(initialRoute);
       delete actionForPath.action;
@@ -33,7 +30,15 @@ export default (state = null, action) => {
       return nextState || state;
     }
 
-    default:
-      return state;
+    default: {
+      //return state;
+      const navigator = getNavigator();
+      if (!navigator) {
+        return state;
+      }
+
+      const nextState = navigator.router.getStateForAction(action, state);
+      return nextState || state;
+    }
   }
 };
