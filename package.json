@@ -1,6 +1,6 @@
 {
   "name": "tf-react-native-navigation",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Fork of the Truefit repo that wraps react-navigation to make navigation friendlier.",
   "main": "lib/index.js",
   "scripts": {
