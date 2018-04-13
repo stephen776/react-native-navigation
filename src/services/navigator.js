@@ -8,7 +8,7 @@ const createNavigator = {
   [STANDALONE]: () => StandaloneNavigator(navigation.routes),
   [STACK]: () => StackNavigator(navigation.routes),
   [DRAWER]: () => createDrawerNavigator(navigation.drawer, navigation.routes),
-  [TAB]: () => createTabNavigator(navigation.tabs),
+  [TAB]: () => createTabNavigator(navigation.tabs, navigation.routes),
 };
 
 const Navigator = {
