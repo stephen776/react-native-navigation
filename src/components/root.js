@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {addNavigationHelpers} from 'react-navigation';
 import {createReduxBoundAddListener} from 'react-navigation-redux-helpers';
 import autobind from 'autobind-decorator';
+import {STANDALONE} from '../services';
 
 import {back} from '../actions';
 
@@ -31,8 +32,8 @@ class Root extends Component {
   // actions
   @autobind
   onBackPress() {
-    const {dispatch, nav} = this.props;
-    if (nav.index === 0) {
+    const {dispatch, navigationState, navigationType} = this.props;
+    if (navigationType === STANDALONE || navigationState.index === 0) {
       return false;
     }
 
